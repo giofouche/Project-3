@@ -61,3 +61,40 @@ var seats = {
 };
 
 
+var myLodging = {
+    weekStay: 3,
+    dailyBreakfast: 30,
+    totalHotelCost: function (json) {
+        var whichHotel;
+        console.log("Let me search for hotels and check for prices. Here are my options:");
+        for (var i = 0; i < json2.lodging.length; i++) {
+            console.log(" ");
+            if (json2.lodging[i].breakfast === false) {
+                console.log("No continental breakfast at " + json2.lodging[i].hotel + ".");
+                
+                for (var d = 1; d <= this.weekStay; d++) {
+                    console.log("We will need $" + this.dailyBreakfast + " for Day " + d + " breakfast.");
+                }
+            } else {
+                console.log("Looks like breakfast is included at " + json2.lodging[i].hotel);
+            }
+            var theLodging = json2.lodging[i];
+            var pricePerWeek = theLodging.pricePerNight * this.weekStay;
+            console.log("The " + theLodging.hotel + " is $" + theLodging.pricePerNight + " per night. This will cost $" + pricePerWeek + " for the duration of the trip.");
+            if (json2.lodging[i].breakfast === false) {
+                var pricePerWeek = pricePerWeek + (this.dailyBreakfast * this.weekStay); 
+                console.log("Plus $" + this.dailyBreakfast * this.weekStay + " to cover breakfast for the trip, making it $" + pricePerWeek + " for the duration of the trip.");
+            } else {
+                console.log("Breakfast included!");
+
+            }
+
+        }
+        console.log(" ");
+        whichHotel = "I think we will stay at " + json2.lodging[1].hotel + ". They are cheaper per night and offer breakfast!";
+        return whichHotel;
+    }
+};
+
+
+
