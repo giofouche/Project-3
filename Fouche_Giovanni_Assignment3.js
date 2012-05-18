@@ -45,3 +45,19 @@ var goToNewYork = {
 
 
 
+var seats = {
+    people: 4,
+    tickets: function (who) {
+        var needNumberTickets;
+        console.log("I want to see Lion King on Brodway. Let me ask " + who + "if they would like to come.");
+        numberTickets = 1;
+        while (numberTickets <= this.people) {
+            console.log(numberTickets);
+            numberTickets++; 
+        }
+        needNumberTickets = this.people;
+        return needNumberTickets; 
+    }
+};
+
+
