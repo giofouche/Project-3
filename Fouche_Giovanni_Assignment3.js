@@ -98,3 +98,44 @@ var myLodging = {
 
 
 
+function extra() {
+    var myextra = [];
+    myextra[0] = "a sauna";
+    myextra[1] = " an exercise room";
+    myextra[2] = " and high speed internet.";
+
+    return myextra.join();
+}
+
+
+
+var allTheGuests = {
+    whoAreWe: function (json) {
+        console.log("To book a room, I will need to let them know the names and ages of each guest.");
+
+        for (var key in json.guests) {
+            var guest = json.guests[key];
+            console.log(guest.name + " age " + guest.age);
+        }
+
+        
+    }
+};
+
+springBreak.myVacation("trip");
+
+if (goToNewYork.canGo(1000, true)) {
+    console.log("Never been to New York. Cant wait!");
+} else {
+    console.log("Can't go this time. We can always go later.");
+};
+
+var howManyTix = seats.tickets(newYork.travelers);
+console.log("We need " + howManyTix + " brodway tickets.");
+
+var theHotel = myLodging.totalHotelCost(json);
+console.log(theHotel);
+console.log("And it includes:");
+console.log(extra());
+
+allTheGuests.whoAreWe(json);
