@@ -24,3 +24,24 @@ var springBreak = {
 };
 
 
+var goToNewYork = {
+    tickets: true,
+    funds: 1000,
+    canGo: function (myfunds, mytickets) {
+        if (mytickets == this.tickets) {
+            if (myfunds >= this.funds) {
+                console.log("We booked our bus tickets so we get to go on our trip!");
+                return true; 
+            } else {
+                console.log("We have our tickets, but no one has any money.  Looks like we won't be going after all.");
+                return false; 
+            }
+        } else {
+            console.log("No tickets.We wil have to try again another time.");
+            return false; 
+        }
+    }
+};
+
+
+
